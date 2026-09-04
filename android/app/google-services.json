@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "585851615343",
+    "project_id": "ashirvadpipes",
+    "storage_bucket": "ashirvadpipes.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585851615343:android:9e5982cd10a87d7f3bb59a",
+        "android_client_info": {
+          "package_name": "com.nebula.ashirvadpipes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1yQiindq5SbfCaSn-KdIcCo-6719lc3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
