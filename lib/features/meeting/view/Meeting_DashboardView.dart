@@ -235,44 +235,49 @@ class Meeting_DashboardView extends GetView<MeetingDashboardController> {
                     // Date Row
                     Row(
                       children: [
-                        Icon(Icons.calendar_today, size: 14),
-                        SizedBox(width: 5),
-                        Text(
-                          "${meeting.fldDepoCode!} ( ${meeting.fldDepoName!} )",
-                          style: TextStyle(
-                            fontFamily: 'PoppinsSemiBold',
-                            fontSize: 13,
-                            //color: Theme.of(context).textTheme.bodyText1?.color,
+                        const Icon(Icons.calendar_today, size: 14),
+                        const SizedBox(width: 5),
+                        Expanded(
+                          child: Text(
+                            "${meeting.fldDepoCode!} ( ${meeting.fldDepoName!} )",
+                            style: const TextStyle(
+                              fontFamily: 'PoppinsSemiBold',
+                              fontSize: 13,
+                            ),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
 
                     // Participants and Owner Row
                     Row(
                       children: [
-                        Icon(Icons.person, size: 15),
-                        SizedBox(width: 5),
+                        const Icon(Icons.person, size: 15),
+                        const SizedBox(width: 5),
                         Text(
                           meeting.fldEstiAttendee!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontFamily: 'PoppinsSemiBold',
-                            // color: Theme.of(context).textTheme.bodyText1?.color,
                           ),
                         ),
-                        SizedBox(width: 20),
-                        Icon(Icons.store, size: 15),
-                        SizedBox(width: 5),
-                        Text(
-                          controller.getOwnerName(meeting),
-                          overflow: TextOverflow.ellipsis,
-                          softWrap: true,
-                          style: TextStyle(
-                            fontFamily: 'PoppinsSemiBold',
-                            fontSize: 14,
-                            //overflow: TextOverflow.ellipsis
-                            // color: Theme.of(context).textTheme.bodyText1?.color,
+                        const SizedBox(width: 20),
+                        const Icon(Icons.store, size: 15),
+                        const SizedBox(width: 5),
+                        Expanded(
+                          child: Text(
+                            controller.getOwnerName(meeting),
+                            overflow: TextOverflow.ellipsis,
+                            softWrap: true,
+                            style: const TextStyle(
+                              fontFamily: 'PoppinsSemiBold',
+                              fontSize: 14,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                           ),
                         ),
                       ],
