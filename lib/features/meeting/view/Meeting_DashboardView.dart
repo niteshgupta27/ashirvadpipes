@@ -278,11 +278,7 @@ class Meeting_DashboardView extends GetView<MeetingDashboardController> {
                         ),
                       ],
                     ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     // View and Invite Buttons
                     Row(
                       children: [
