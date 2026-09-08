@@ -24,7 +24,6 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     final bottomInsets = MediaQuery.of(context).viewInsets.bottom;
     //bool isKeyboardOpen = bottomInsets != 0;
-    print(bottomInsets);
     return Scaffold(
       backgroundColor: AppColors.whites,
       resizeToAvoidBottomInset: true,
@@ -51,7 +50,7 @@ class _LoginViewState extends State<LoginView> {
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage(Images.arabicFlag),
-                                  fit: BoxFit.fill,
+                                  fit: BoxFit.fitHeight,
                                 ),
                               ),
                             ),

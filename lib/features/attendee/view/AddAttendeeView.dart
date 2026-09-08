@@ -1,8 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import '../../../Utill/app_required.dart';
 import '../../../Utill/custom_loader_widget.dart';
@@ -53,6 +51,7 @@ class AddAttendeeView extends GetView<AddAttendeeController> {
                       ),
                     ),
                     const SizedBox(height: 16),
+
                     TextField(
                       controller: controller.Painter_NameController.value,
                       decoration: InputDecoration(
@@ -123,169 +122,6 @@ class AddAttendeeView extends GetView<AddAttendeeController> {
                       // onChanged: (value) => controller.noteDescription.value = value,
                     ),
                     const SizedBox(height: 16),
-                    TextField(controller: controller.fatherNameController.value,
-                      decoration: InputDecoration(labelText: 'Father Name',
-                        labelStyle: const TextStyle(color: AppColors.fountGray),
-                        // Change label color
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.fountGray.withOpacity(0.4)), // Default border
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.fountGray.withOpacity(0.4)), // Unfocused border color
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.fountGray.withOpacity(0.4), width: 2.0), // Focused border color
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),),
-                      // onChanged: (value) => controller.noteDescription.value = value,
-                    ),
-                    const SizedBox(height: 16),
-
-                    TextField(
-                      controller: controller.cityController.value,
-                      decoration: InputDecoration(
-                        labelText: 'City',
-                        labelStyle: const TextStyle(
-                          color: AppColors.fountGray,
-                        ),
-                        // Change label color
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppColors.fountGray.withOpacity(0.4),
-                          ), // Default border
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppColors.fountGray.withOpacity(0.4),
-                          ), // Unfocused border color
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppColors.fountGray.withOpacity(0.4),
-                            width: 2.0,
-                          ),
-                          // Focused border color
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                      ),
-                      // onChanged: (value) => controller.noteTitle.value = value,
-                    ),
-                    const SizedBox(height: 16),
-                    // Padding(
-                    //   padding: EdgeInsets.only(left: 5, right: 5),
-                    //   child: Text("Certification Details", style: Styles.PageTitle.copyWith(color: AppColors.primaryColor)),
-                    // ),
-                    // const SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: TextField(
-                            controller: controller.dobDayController.value,
-                            keyboardType: TextInputType.number,
-                            maxLength: 2,
-                            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                            decoration: InputDecoration(
-                              labelText: 'Day',
-                              counterText: "",
-                              labelStyle: const TextStyle(color: AppColors.fountGray),
-                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0)),
-                            ),
-                            onChanged: (value) => controller.calculateAge(),
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: TextField(
-                            controller: controller.dobMonthController.value,
-                            keyboardType: TextInputType.number,
-                            maxLength: 2,
-                            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                            decoration: InputDecoration(
-                              labelText: 'Month',
-                              counterText: "",
-                              labelStyle: const TextStyle(color: AppColors.fountGray),
-                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0)),
-                            ),
-                            onChanged: (value) => controller.calculateAge(),
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: TextField(
-                            controller: controller.dobYearController.value,
-                            keyboardType: TextInputType.number,
-                            maxLength: 4,
-                            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                            decoration: InputDecoration(
-                              labelText: 'Year',
-                              counterText: "",
-                              labelStyle: const TextStyle(color: AppColors.fountGray),
-                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0)),
-                            ),
-                            onChanged: (value) => controller.calculateAge(),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      "DD/MM/YYYY E.g. 27/09/1987",
-                      style:
-                      TextStyle(
-                          fontFamily: AppConstants.fontFamily,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.black,
-                          fontSize: Dimensions.fontSizeExtraSmall),
-                    ),
-                    const SizedBox(height: 16),
-                    TextField(controller: controller.AgeController.value,readOnly: true,
-                      decoration: InputDecoration(labelText: 'Age',
-                        suffixText: "Years",
-                        suffixStyle: const TextStyle(color: AppColors.fountGray),
-                        labelStyle: const TextStyle(color: AppColors.fountGray),
-                        // Change label color
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.fountGray.withOpacity(0.4)), // Default border
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.fountGray.withOpacity(0.4)), // Unfocused border color
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.fountGray.withOpacity(0.4), width: 2.0), // Focused border color
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),),
-                      // onChanged: (value) => controller.noteDescription.value = value,
-                    ),
-                    const SizedBox(height: 16),
-
-                    Padding(padding: EdgeInsets.all(5),child:  Text(
-                      "CRM Registered ?",
-                      style:  Styles.headerTitel,
-                    ),),
-                    const SizedBox(height: 5),
-                    Row(
-                      children: controller.radiooptions.map((tag) {
-                        return Expanded(
-                          child: RadioListTile<String>(
-                            title: Text(tag),
-                            value: tag,activeColor: AppColors.primaryColor,
-                            groupValue: controller.CRMRegistered.value,
-                            onChanged: (String? value) {
-                              controller.CRMRegistered.value = value!;
-                            },
-                            contentPadding: EdgeInsets.zero,
-                            visualDensity: VisualDensity.compact,
-                          ),
-                        );
-                      }).toList(),
-                    ),
-                    const SizedBox(height: 16),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 5),
                       child: Text("Attendee Type", style: Styles.headerTitel),
@@ -296,7 +132,7 @@ class AddAttendeeView extends GetView<AddAttendeeController> {
                         return Expanded(
                           child: RadioListTile<String>(
                             title: Text(tag),
-                            value: tag,activeColor: AppColors.primaryColor,
+                            value: tag,
                             groupValue: controller.attendeeType.value,
                             onChanged: (String? value) {
                               controller.attendeeType.value = value!;
@@ -308,459 +144,87 @@ class AddAttendeeView extends GetView<AddAttendeeController> {
                         );
                       }).toList(),
                     ),
-                    // if(controller.attendeeType.value=="Electrician")
-                    //   Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-                    //     const SizedBox(height: 16),
-                    //     TextField(
-                    //       controller: controller.ShopnameController.value,
-                    //       decoration: InputDecoration(
-                    //         labelText: 'Shop Name',
-                    //         labelStyle: const TextStyle(
-                    //           color: AppColors.fountGray,
-                    //         ),
-                    //         // Change label color
-                    //         border: OutlineInputBorder(
-                    //           borderSide: BorderSide(
-                    //             color: AppColors.fountGray.withOpacity(0.4),
-                    //           ), // Default border
-                    //           borderRadius: BorderRadius.circular(8.0),
-                    //         ),
-                    //         enabledBorder: OutlineInputBorder(
-                    //           borderSide: BorderSide(
-                    //             color: AppColors.fountGray.withOpacity(0.4),
-                    //           ), // Unfocused border color
-                    //           borderRadius: BorderRadius.circular(8.0),
-                    //         ),
-                    //         focusedBorder: OutlineInputBorder(
-                    //           borderSide: BorderSide(
-                    //             color: AppColors.fountGray.withOpacity(0.4),
-                    //             width: 2.0,
-                    //           ),
-                    //           // Focused border color
-                    //           borderRadius: BorderRadius.circular(8.0),
-                    //         ),
-                    //       ),
-                    //       // onChanged: (value) => controller.noteTitle.value = value,
-                    //     ),
-                    //     const SizedBox(height: 16),
-                    //     TextField(
-                    //       controller: controller.ShopLocationController.value,
-                    //       keyboardType: TextInputType.emailAddress,
-                    //       decoration: InputDecoration(
-                    //         labelText: 'Shop Location',
-                    //         labelStyle: const TextStyle(
-                    //           color: AppColors.fountGray,
-                    //         ),
-                    //         // Change label color
-                    //         border: OutlineInputBorder(
-                    //           borderSide: BorderSide(
-                    //             color: AppColors.fountGray.withOpacity(0.4),
-                    //           ), // Default border
-                    //           borderRadius: BorderRadius.circular(8.0),
-                    //         ),
-                    //         enabledBorder: OutlineInputBorder(
-                    //           borderSide: BorderSide(
-                    //             color: AppColors.fountGray.withOpacity(0.4),
-                    //           ), // Unfocused border color
-                    //           borderRadius: BorderRadius.circular(8.0),
-                    //         ),
-                    //         focusedBorder: OutlineInputBorder(
-                    //           borderSide: BorderSide(
-                    //             color: AppColors.fountGray.withOpacity(0.4),
-                    //             width: 2.0,
-                    //           ),
-                    //           // Focused border color
-                    //           borderRadius: BorderRadius.circular(8.0),
-                    //         ),
-                    //       ),
-                    //       // onChanged: (value) => controller.noteDescription.value = value,
-                    //     ),
-                    //     const SizedBox(height: 16),
-                    //     TextField(
-                    //       controller: controller.shopCodeController.value,
-                    //       decoration: InputDecoration(
-                    //         labelText: 'Shop Code (Optional)',
-                    //         labelStyle: const TextStyle(
-                    //           color: AppColors.fountGray,
-                    //         ),
-                    //         // Change label color
-                    //         border: OutlineInputBorder(
-                    //           borderSide: BorderSide(
-                    //             color: AppColors.fountGray.withOpacity(0.4),
-                    //           ), // Default border
-                    //           borderRadius: BorderRadius.circular(8.0),
-                    //         ),
-                    //         enabledBorder: OutlineInputBorder(
-                    //           borderSide: BorderSide(
-                    //             color: AppColors.fountGray.withOpacity(0.4),
-                    //           ), // Unfocused border color
-                    //           borderRadius: BorderRadius.circular(8.0),
-                    //         ),
-                    //         focusedBorder: OutlineInputBorder(
-                    //           borderSide: BorderSide(
-                    //             color: AppColors.fountGray.withOpacity(0.4),
-                    //             width: 2.0,
-                    //           ),
-                    //           // Focused border color
-                    //           borderRadius: BorderRadius.circular(8.0),
-                    //         ),
-                    //       ),
-                    //       // onChanged: (value) => controller.noteTitle.value = value,
-                    //     ),]),
-                    if(controller.attendeeType.value!="Electrician")
+
+                    if(controller.attendeeType.value!="Plumber")
                       Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
                         const SizedBox(height: 16),
-                        DropdownButtonFormField<String>(
-                          value: controller.selectedTeamSize.value.isEmpty
-                              ? null
-                              : controller.selectedTeamSize.value,
-                          decoration: InputDecoration(
-                            labelText: 'Team Size',
-                            labelStyle:
-                                const TextStyle(color: AppColors.fountGray),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: AppColors.fountGray.withOpacity(0.4)),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: AppColors.fountGray.withOpacity(0.4)),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: AppColors.fountGray.withOpacity(0.4),
-                                  width: 2.0),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          items: controller.teamSizeOptions.map((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                          onChanged: (String? newValue) {
-                            controller.selectedTeamSize.value = newValue!;
-                          },
-                        ),
-                        const SizedBox(height: 16),
-                        DropdownButtonFormField<String>(
-                          value: controller.selectedSitePerMonth.value.isEmpty
-                              ? null
-                              : controller.selectedSitePerMonth.value,
-                          decoration: InputDecoration(
-                            labelText: 'Site per Month',
-                            labelStyle:
-                                const TextStyle(color: AppColors.fountGray),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: AppColors.fountGray.withOpacity(0.4)),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: AppColors.fountGray.withOpacity(0.4)),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: AppColors.fountGray.withOpacity(0.4),
-                                  width: 2.0),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          items: controller.sitePerMonthOptions
-                              .map((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                          onChanged: (String? newValue) {
-                            controller.selectedSitePerMonth.value = newValue!;
-                          },
-                        ),
-
+            DropdownButtonFormField<String>(
+                    value: controller.selectedTeamSize.value.isEmpty
+                        ? null
+                        : controller.selectedTeamSize.value,
+                    decoration: InputDecoration(
+                      labelText: 'Team Size',
+                      labelStyle:
+                          const TextStyle(color: AppColors.fountGray),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: AppColors.fountGray.withOpacity(0.4)),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: AppColors.fountGray.withOpacity(0.4)),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: AppColors.fountGray.withOpacity(0.4),
+                            width: 2.0),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                    items: controller.teamSizeOptions.map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      controller.selectedTeamSize.value = newValue!;
+                    },
+                  ),
+                  const SizedBox(height: 16),
+                  DropdownButtonFormField<String>(
+                    value: controller.selectedSitePerMonth.value.isEmpty
+                        ? null
+                        : controller.selectedSitePerMonth.value,
+                    decoration: InputDecoration(
+                      labelText: 'Site per Month',
+                      labelStyle:
+                          const TextStyle(color: AppColors.fountGray),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: AppColors.fountGray.withOpacity(0.4)),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: AppColors.fountGray.withOpacity(0.4)),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: AppColors.fountGray.withOpacity(0.4),
+                            width: 2.0),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                    items: controller.sitePerMonthOptions
+                        .map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      controller.selectedSitePerMonth.value = newValue!;
+                    },
+                  ),
                       ]),
-
                     const SizedBox(height: 16),
-                    // DropdownButtonFormField<String>(
-                    //   value: controller.selectedExperience.value.isEmpty
-                    //       ? null
-                    //       : controller.selectedExperience.value,
-                    //   decoration: InputDecoration(
-                    //     labelText: 'Years of Experience',
-                    //     labelStyle:
-                    //     const TextStyle(color: AppColors.fountGray),
-                    //     border: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //           color: AppColors.fountGray.withOpacity(0.4)),
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //     enabledBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //           color: AppColors.fountGray.withOpacity(0.4)),
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //     focusedBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //           color: AppColors.fountGray.withOpacity(0.4),
-                    //           width: 2.0),
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //   ),
-                    //   items: controller.experienceOptions
-                    //       .map((String value) {
-                    //     return DropdownMenuItem<String>(
-                    //       value: value,
-                    //       child: Text(value),
-                    //     );
-                    //   }).toList(),
-                    //   onChanged: (String? newValue) {
-                    //     controller.selectedExperience.value = newValue!;
-                    //   },
-                    // ),
-                    // const SizedBox(height: 16),
-                    // Padding(
-                    //   padding: const EdgeInsets.symmetric(horizontal: 5),
-                    //   child: Text(
-                    //     "Primary Project Type",
-                    //     style: Styles.headerTitel,
-                    //   ),
-                    // ),
-                    // const SizedBox(height: 8),
-                    // Obx(() => Wrap(
-                    //       spacing: 8,
-                    //       children: controller.projectTypeOptions.map((type) {
-                    //         final isSelected =
-                    //             controller.selectedProjectType.value == type;
-                    //         return FilterChip(
-                    //           label: Text(type),
-                    //           selected: isSelected,
-                    //           onSelected: (bool value) {
-                    //             if (value) {
-                    //               controller.selectedProjectType.value = type;
-                    //             } else {
-                    //               controller.selectedProjectType.value = "";
-                    //             }
-                    //           },
-                    //           selectedColor:
-                    //               AppColors.primaryColor.withOpacity(0.2),
-                    //           checkmarkColor: AppColors.primaryColor,
-                    //           labelStyle: TextStyle(
-                    //             color: isSelected
-                    //                 ? AppColors.primaryColor
-                    //                 : AppColors.fountGray,
-                    //             fontWeight: isSelected
-                    //                 ? FontWeight.bold
-                    //                 : FontWeight.normal,
-                    //           ),
-                    //           backgroundColor: AppColors.whites,
-                    //           shape: RoundedRectangleBorder(
-                    //             borderRadius: BorderRadius.circular(8),
-                    //             side: BorderSide(
-                    //               color: isSelected
-                    //                   ? AppColors.primaryColor
-                    //                   : AppColors.fountGray.withOpacity(0.4),
-                    //             ),
-                    //           ),
-                    //         );
-                    //       }).toList(),
-                    //     )),
-                    //
-                    // const SizedBox(height: 16),
-                    // Padding(
-                    //   padding: const EdgeInsets.symmetric(horizontal: 5),
-                    //   child: Text("Brand Decision Maker?", style: Styles.headerTitel),
-                    // ),
-                    // Row(
-                    //   children: controller.decisionMakerOptions.map((tag) {
-                    //     return Expanded(
-                    //       child: RadioListTile<String>(
-                    //         title: Text(tag),
-                    //         value: tag,
-                    //         groupValue: controller.decisionMaker.value,
-                    //         activeColor: AppColors.primaryColor,
-                    //         onChanged: (String? value) {
-                    //           controller.decisionMaker.value = value!;
-                    //         },
-                    //         contentPadding: EdgeInsets.zero,
-                    //         visualDensity: VisualDensity.compact,
-                    //       ),
-                    //     );
-                    //   }).toList(),
-                    // ),
-                    // const SizedBox(height: 16),
-                    // Padding(
-                    //   padding: const EdgeInsets.symmetric(horizontal: 5),
-                    //   child: Text("Preferred Brands", style: Styles.headerTitel),
-                    // ),
-                    // const SizedBox(height: 8),
-                    // Obx(() => Wrap(
-                    //       spacing: 8,
-                    //       children: controller.Adhesive.map((brand) {
-                    //         final isSelected = controller.selectedAdhesives
-                    //             .contains(brand.fldAdhesiveName);
-                    //         return FilterChip(
-                    //           label: Text(brand.fldAdhesiveName ?? ""),
-                    //           selected: isSelected,
-                    //           onSelected: (bool value) {
-                    //             if (value) {
-                    //               controller.selectedAdhesives
-                    //                   .add(brand.fldAdhesiveName!);
-                    //             } else {
-                    //               controller.selectedAdhesives
-                    //                   .remove(brand.fldAdhesiveName);
-                    //             }
-                    //           },
-                    //           selectedColor:
-                    //               AppColors.primaryColor.withOpacity(0.2),
-                    //           checkmarkColor: AppColors.primaryColor,
-                    //           labelStyle: TextStyle(
-                    //             color: isSelected
-                    //                 ? AppColors.primaryColor
-                    //                 : AppColors.fountGray,
-                    //             fontWeight: isSelected
-                    //                 ? FontWeight.bold
-                    //                 : FontWeight.normal,
-                    //           ),
-                    //           backgroundColor: AppColors.whites,
-                    //           shape: RoundedRectangleBorder(
-                    //             borderRadius: BorderRadius.circular(8),
-                    //             side: BorderSide(
-                    //               color: isSelected
-                    //                   ? AppColors.primaryColor
-                    //                   : AppColors.fountGray.withOpacity(0.4),
-                    //             ),
-                    //           ),
-                    //         );
-                    //       }).toList(),
-                    //     )),
-                    // const SizedBox(height: 16),
-                    // DropdownButtonFormField<String>(
-                    //   value: controller.selectedPurchaseFrequency.value.isEmpty
-                    //       ? null
-                    //       : controller.selectedPurchaseFrequency.value,
-                    //   decoration: InputDecoration(
-                    //     labelText: 'Purchase Frequency?',
-                    //     labelStyle: const TextStyle(color: AppColors.fountGray),
-                    //     border: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //           color: AppColors.fountGray.withOpacity(0.4)),
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //     enabledBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //           color: AppColors.fountGray.withOpacity(0.4)),
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //     focusedBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //           color: AppColors.fountGray.withOpacity(0.4),
-                    //           width: 2.0),
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //   ),
-                    //   items: controller.purchaseFrequencyOptions
-                    //       .map((String value) {
-                    //     return DropdownMenuItem<String>(
-                    //       value: value,
-                    //       child: Text(value),
-                    //     );
-                    //   }).toList(),
-                    //   onChanged: (String? newValue) {
-                    //     controller.selectedPurchaseFrequency.value = newValue!;
-                    //   },
-                    // ),
-                    // const SizedBox(height: 16),
-                    // DropdownButtonFormField<String>(
-                    //   value: controller.selectedPurchaseSource.value.isEmpty
-                    //       ? null
-                    //       : controller.selectedPurchaseSource.value,
-                    //   decoration: InputDecoration(
-                    //     labelText: 'Purchase Source?',
-                    //     labelStyle: const TextStyle(color: AppColors.fountGray),
-                    //     border: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //           color: AppColors.fountGray.withOpacity(0.4)),
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //     enabledBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //           color: AppColors.fountGray.withOpacity(0.4)),
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //     focusedBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //           color: AppColors.fountGray.withOpacity(0.4),
-                    //           width: 2.0),
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //   ),
-                    //   items:
-                    //       controller.purchaseSourceOptions.map((String value) {
-                    //     return DropdownMenuItem<String>(
-                    //       value: value,
-                    //       child: Text(value),
-                    //     );
-                    //   }).toList(),
-                    //   onChanged: (String? newValue) {
-                    //     controller.selectedPurchaseSource.value = newValue!;
-                    //   },
-                    // ),
-                    // const SizedBox(height: 16),
-                    // Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-                    //   Padding(padding: EdgeInsets.all(5),child:  Text(
-                    //     "Enrolled in Loyalty Program?",
-                    //     style:  Styles.headerTitel,
-                    //   ),),
-                    //   const SizedBox(height: 5),
-                    //   Row(
-                    //     children: controller.radiooptions.map((tag) {
-                    //       return Expanded(
-                    //         child: RadioListTile<String>(
-                    //           title: Text(tag),
-                    //           value: tag,activeColor: AppColors.primaryColor,
-                    //           groupValue: controller.Enrolled_Loyalty.value,
-                    //           onChanged: (String? value) {
-                    //             controller.Enrolled_Loyalty.value = value!;
-                    //           },
-                    //           contentPadding: EdgeInsets.zero,
-                    //           visualDensity: VisualDensity.compact,
-                    //         ),
-                    //       );
-                    //     }).toList(),
-                    //   ),]),
-                    // if(controller.Enrolled_Loyalty.value=="Yes")
-                    //   Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-                    //
-                    //
-                    //     const SizedBox(height: 16),
-                    //     TextField(controller: controller.companynameController.value,
-                    //       decoration: InputDecoration(labelText: 'please mention the company name',
-                    //         labelStyle: const TextStyle(color: AppColors.fountGray),
-                    //         // Change label color
-                    //         border: OutlineInputBorder(
-                    //           borderSide: BorderSide(color: AppColors.fountGray.withOpacity(0.4)), // Default border
-                    //           borderRadius: BorderRadius.circular(8.0),
-                    //         ),
-                    //         enabledBorder: OutlineInputBorder(
-                    //           borderSide: BorderSide(color: AppColors.fountGray.withOpacity(0.4)), // Unfocused border color
-                    //           borderRadius: BorderRadius.circular(8.0),
-                    //         ),
-                    //         focusedBorder: OutlineInputBorder(
-                    //           borderSide: BorderSide(color: AppColors.fountGray.withOpacity(0.4), width: 2.0), // Focused border color
-                    //           borderRadius: BorderRadius.circular(8.0),
-                    //         ),),
-                    //       // onChanged: (value) => controller.noteDescription.value = value,
-                    //     )
-                    //     ,]),
-                    // const SizedBox(height: 16),
                     Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
                       Padding(padding: EdgeInsets.all(5),child:  Text(
-                        "Gift Given?",
+                        "Is Gift Given",
                         style:  Styles.headerTitel,
                       ),),
                       const SizedBox(height: 5),
@@ -769,7 +233,7 @@ class AddAttendeeView extends GetView<AddAttendeeController> {
                           return Expanded(
                             child: RadioListTile<String>(
                               title: Text(tag),
-                              value: tag,activeColor: AppColors.primaryColor,
+                              value: tag,
                               groupValue: controller.isgiftgiven.value,
                               onChanged: (String? value) {
                                 controller.isgiftgiven.value = value!;
@@ -815,7 +279,7 @@ class AddAttendeeView extends GetView<AddAttendeeController> {
                         return Expanded(
                           child: RadioListTile<String>(
                             title: Text(tag),
-                            value: tag,activeColor: AppColors.primaryColor,
+                            value: tag,
                             groupValue: controller.smartphoneOption.value,
                             onChanged: (String? value) {
                               controller.smartphoneOption.value = value!;
@@ -839,7 +303,7 @@ class AddAttendeeView extends GetView<AddAttendeeController> {
                             // final isSelected = controller.selectedTags.contains(tag);
                             return RadioListTile<String>(
                               title: Text(tag),
-                              value: tag,activeColor: AppColors.primaryColor,
+                              value: tag,
                               groupValue: controller.DownloadApp.value,
                               onChanged: (String? value) {
                                 controller.DownloadApp.value = value!;
@@ -850,7 +314,7 @@ class AddAttendeeView extends GetView<AddAttendeeController> {
                           }).toList(),
                         ),],),
                     const SizedBox(height: 16),
-
+//
 
 
                     Padding(
@@ -863,7 +327,7 @@ class AddAttendeeView extends GetView<AddAttendeeController> {
                         return Expanded(
                           child: RadioListTile<String>(
                             title: Text(tag),
-                            value: tag,activeColor: AppColors.primaryColor,
+                            value: tag,
                             groupValue: controller.participantOption.value,
                             onChanged: (String? value) {
                               controller.participantOption.value = value!;
@@ -923,116 +387,6 @@ class AddAttendeeView extends GetView<AddAttendeeController> {
                           ),
                         ],
                       ),
-
-
-
-                    // DropdownButtonFormField<String>(
-                    //   value: controller.selectedQualification.value.isEmpty
-                    //       ? null
-                    //       : controller.selectedQualification.value,
-                    //   decoration: InputDecoration(
-                    //     labelText: 'Qualification',
-                    //     labelStyle: const TextStyle(color: AppColors.fountGray),
-                    //     border: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //           color: AppColors.fountGray.withOpacity(0.4)),
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //     enabledBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //           color: AppColors.fountGray.withOpacity(0.4)),
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //     focusedBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //           color: AppColors.fountGray.withOpacity(0.4),
-                    //           width: 2.0),
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //   ),
-                    //   items: controller.qualificationOptions.map((String value) {
-                    //     return DropdownMenuItem<String>(
-                    //       value: value,
-                    //       child: Text(value),
-                    //     );
-                    //   }).toList(),
-                    //   onChanged: (String? newValue) {
-                    //     controller.selectedQualification.value = newValue!;
-                    //   },
-                    // ),
-                    // const SizedBox(height: 16),
-                    // TextField(
-                    //   controller: controller.addressController.value,
-                    //   maxLines: 3,
-                    //   decoration: InputDecoration(
-                    //     labelText: 'Address',
-                    //     labelStyle: const TextStyle(
-                    //       color: AppColors.fountGray,
-                    //     ),
-                    //     // Change label color
-                    //     border: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //         color: AppColors.fountGray.withOpacity(0.4),
-                    //       ), // Default border
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //     enabledBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //         color: AppColors.fountGray.withOpacity(0.4),
-                    //       ), // Unfocused border color
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //     focusedBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //         color: AppColors.fountGray.withOpacity(0.4),
-                    //         width: 2.0,
-                    //       ),
-                    //       // Focused border color
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //   ),
-                    //   // onChanged: (value) => controller.noteTitle.value = value,
-                    // ),
-                    // const SizedBox(height: 16),
-
-                    // const SizedBox(height: 16),
-                    // TextField(
-                    //   controller: controller.pincodeController.value,
-                    //   maxLength: 6,
-                    //   keyboardType: TextInputType.number,
-                    //   inputFormatters: [
-                    //     FilteringTextInputFormatter.digitsOnly,
-                    //   ],
-                    //   decoration: InputDecoration(
-                    //     labelText: 'Pincode',
-                    //     counterText: "",
-                    //     labelStyle: const TextStyle(
-                    //       color: AppColors.fountGray,
-                    //     ),
-                    //     // Change label color
-                    //     border: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //         color: AppColors.fountGray.withOpacity(0.4),
-                    //       ), // Default border
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //     enabledBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //         color: AppColors.fountGray.withOpacity(0.4),
-                    //       ), // Unfocused border color
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //     focusedBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide(
-                    //         color: AppColors.fountGray.withOpacity(0.4),
-                    //         width: 2.0,
-                    //       ),
-                    //       // Focused border color
-                    //       borderRadius: BorderRadius.circular(8.0),
-                    //     ),
-                    //   ),
-                    //   // onChanged: (value) => controller.noteTitle.value = value,
-                    // ),
                     const SizedBox(height: 16),
                     DropdownButtonFormField<Dealer>(
                       value: controller.selectedDealer.value,

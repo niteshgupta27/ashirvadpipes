@@ -29,8 +29,8 @@ class AttendeeBinding extends Bindings {
     Get.lazyPut<AddAttendee3Controller>(
           () => AddAttendee3Controller(),
     );
-    Get.lazyPut<QuestionController>(
-          () => QuestionController(),
-    );
+    // Get.lazyPut<QuestionController>(
+    //       () => QuestionController(),
+    // );
   }
 }

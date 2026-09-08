@@ -120,11 +120,11 @@ class AppPages {
         page: () =>  InviteView(),
         binding: InviteBindings()
     ),
-    GetPage(
-      name: _Paths.QuestionScreen,
-      page: () => QuestionView(),
-      binding: AttendeeBinding(),
-    ),
+    // GetPage(
+    //   name: _Paths.QuestionScreen,
+    //   page: () => QuestionView(),
+    //   binding: AttendeeBinding(),
+    // ),
     // // GetPage(
     // //   name: _Paths.Profile,
     // //   page: () => ProfileView(),

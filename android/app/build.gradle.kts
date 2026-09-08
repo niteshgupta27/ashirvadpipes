@@ -14,6 +14,7 @@ android {
     namespace = "com.nebula.ashirvadpipes"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
+    val appVersionName = "1.0.0"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -28,9 +29,11 @@ android {
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        versionName = appVersionName
     }
-
+    base {
+        archivesName.set("AshirvadPipes-$appVersionName")
+    }
     signingConfigs {
         create("release") {
             val keystorePropertiesFile = rootProject.file("key.properties")
@@ -43,14 +46,21 @@ android {
             keyPassword = keystoreProperties["keyPassword"] as String
             storeFile = keystoreProperties["storeFile"]?.let { rootProject.file("app/$it") }
             storePassword = keystoreProperties["storePassword"] as String
+            enableV1Signing = true
+            enableV2Signing = true
         }
     }
 
     buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
+        getByName("release") {
+            isMinifyEnabled = false
+            isShrinkResources = false
             signingConfig = signingConfigs.getByName("release")
+        }
+        getByName("debug") {
+            isMinifyEnabled = false
+            isShrinkResources = false
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
 }

@@ -150,7 +150,7 @@ class MeetingDashboardController extends GetxController {
         });
   }
 
-  static const platform = MethodChannel('com.nebula.birlacable/permissions');
+  static const platform = MethodChannel('com.nebula.ashirvadpipes/permissions');
   String permissionStatus = "Unknown";
 
   Future<void> checkPermissions() async {
@@ -344,7 +344,7 @@ class MeetingDashboardController extends GetxController {
 }
 
 class PermissionService {
-  static const _channel = MethodChannel("com.nebula.birlacable/permissions");
+  static const _channel = MethodChannel("com.nebula.ashirvadpipes/permissions");
 
   Future<String> requestPermissions() async {
     try {
